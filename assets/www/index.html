@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ghi Điểm</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.3.2.min.css">
+	
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="js/jquery.js"></script>
+	<script src='cordova.js'></script>
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+ 
+    <style>
+    	.stt
+		{
+			width:10%;
+			
+		}
+		.navbar
+		{
+			width:80%;
+			float:right;
+		}
+		.button_add
+		{
+			width:15%;
+			float:left;
+		}
+		.add
+		{
+			background-color:red;
+			width:20%;
+			height:60px;
+			border:none;
+			color:#000;
+			font-size:40px
+		}
+		.add_btn
+		{
+			font-size:50px;
+		}
+		a {
+			height:30px;
+			}
+		.row
+		{
+			display:none;
+		}
+		
+    </style>
+  </head>
+  <body>
+ 
+
+  <div data-role="header" data-position="fixed" data-theme="b">
+  	<h3>Ghi Điểm</h3>
+    <a href="#" id='quit' data-icon="home">Home</a>
+    <a  href="#add-form" data-rel="popup" data-role="button" data-inline="true" data-transition="pop" data-icon="gear" data-rel="dialog">Setting</a>
+  	<div data-role="navbar" >
+		<ul>
+        	<li class="stt"><a  data-theme="a">STT</a></li>
+			
+			<li><a href="#popupBasic" index='0' id="show_name_1" ref='popup' data-rel="popup" data-position-to="window">Tên 1</a></li>
+			<li><a  href="#popupBasic" index='1' id="show_name_2"  index='1' ref='popup' data-rel="popup" data-position-to="window">Tên 2</a></li>
+			<li><a  href="#popupBasic" index='2' id="show_name_3"  index='2' ref='popup' data-rel="popup" data-position-to="window">Tên 3</a></li>
+			<li><a href="#popupBasic" index='3' id="show_name_4" index='3' ref='popup' data-rel="popup" data-position-to="window">Tên 4</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div>
+	<div class="content" >
+    	
+   <div data-role="navbar" class="row dau" id='r0' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">1</a></li>
+			
+			<li><a class='bag ' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r1' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">2</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r2' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">3</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+      <div data-role="navbar" class="row dau" id='r3' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">4</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+   
+   
+     <div data-role="navbar" class="row dau" id='r4' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">5</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+      <div data-role="navbar" class="row dau" id='r5' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">6</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+      <div data-role="navbar" class="row dau" id='r6' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">7</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r7' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">8</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r8' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">9</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    	
+        <div data-role="navbar" class="row dau" id='r9' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">10</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r10' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">11</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r11' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">12</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r12' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">13</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r13' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">14</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r14' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">15</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    
+    <div data-role="navbar" class="row dau" id='r15' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">16</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r16' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">17</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r17' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">18</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r18' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">19</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    
+    <div data-role="navbar" class="row dau" id='r19' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">20</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r20' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">21</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    
+    <div data-role="navbar" class="row dau" id='r21' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">22</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r22' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">23</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r23' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">24</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r24' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">25</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r25' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">26</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r26' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">27</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r27' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">28</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r28' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">29</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r29' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">30</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r30' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">31</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r31' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">32</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r32' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">33</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r33' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">34</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r34' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">35</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r35' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">36</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r36' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">37</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r37' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">38</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r38' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">39</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r39' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">40</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r40' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">41</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="row dau" id='r41' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">42</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r42' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">43</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r43' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">44</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r44' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">45</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r45' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">46</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r46' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">47</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r47' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">48</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r48' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">49</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar --><div data-role="navbar" class="row dau" id='r49' >
+		<ul>
+        	<li class="stt"><a  data-theme="a">50</a></li>
+			
+			<li><a class='bag' id='0'></a></li>
+			<li><a  class='bag' id='1'></a></li>
+			<li><a class='bag' id='2'></a></li>
+			<li><a class='bag'id='3'></a></li>
+		</ul>
+	</div><!-- /navbar -->
+    
+    
+    </div>
+
+<div data-role="footer" data-position="fixed"  data-theme="b">
+  	<div data-role="navbar" class="navbar" >
+		<ul>
+        	
+			<li><a class='num'>+1</a></li>
+			<li><a class='num'>+2</a></li>
+            <li><a class='num'>+5</a></li>
+		</ul>
+	</div><!-- /navbar -->
+    <div data-role="navbar" class="navbar" >
+		<ul>
+        	
+			<li><a class='num'>-1</a></li>
+			<li><a class='num'>-2</a></li>
+            <li><a class='num'>-5</a></li>
+		</ul>
+	</div><!-- /navbar -->
+  	<a href="#" id='add_row' data-shadow="false" data-role="button" class="add" data-corners="false"  >
+    Add
+    </a>
+</div>
+
+
+<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="add-form">
+
+       <h1 style="text-align:center" >Setting</h1>
+       
+        <input type="text" name="name" id="name_1" value="" placeholder="Tên 1" />
+         <input type="text" name="name" id="name_2" value=""  placeholder="Tên 2" />
+          <input type="text" name="name" id="name_3" value=""  placeholder="Tên 3"/>
+           <input type="text" name="name" id="name_4" value="" placeholder="Tên 4" />
+           
+           <a href="#" data-role="button" data-corners="false" data-theme="a" style="padding-bottom:10px" id="btnOk">Xác Nhận</a>
+            <a href="#" data-role="button" data-corners="false" data-theme="a" style="padding-bottom:10px" onClick="reset()">Reset Điểm</a>
+
+	</div><!-- /panel -->
+
+ <div data-role="popup" id="popupBasic">
+	<p><span id='name_popup' style="font-weight:bold"></span> hiên đang có <span id="score_poup" style="font-weight:bold"></span> điểm sau <span id='luot_popup' style="font-weight:bold">12</span> lượt</p>
+</div>
+
+<style>
+	.active{
+	background-color:red;
+	
+	}
+
+</style>
+<script>
+
+
+
+
+var score= new Array(0,0,0,0);
+var chiso=-1;
+var i=0;
+
+$('#quit').on('touchstart',function(){
+	navigator.app.exitApp();
+
+});
+
+$('#add_row').on('touchstart',function(){
+		
+		var name='r'+i.toString();
+			$('#'+name).removeClass('row');
+			i++;
+		
+		});
+
+$("a[ref='popup']").on('touchstart',function(){
+	
+	
+		
+	
+	$('#name_popup').text($(this).children().children().text());
+	$('#score_poup').text(score[$(this).attr('index')]);
+	$('#luot_popup').text(i);
+	});
+
+function reset()
+{
+	chiso=-1;
+	i=0;
+	$('.dau').addClass('row');
+	$( "#add-form" ).panel( "close" );
+	score[0]=score[1]=score[2]=score[3]=0;
+	$('.bag').children().children().text('');
+}
+
+$('#btnOk').on('touchstart',function(){
+	
+	
+	
+	$( "#add-form" ).panel( "close" );
+	$('#show_name_1').children().children().text($('#name_1').val());
+	$('#show_name_2').children().children().text($('#name_2').val());
+	$('#show_name_3').children().children().text($('#name_3').val());
+	$('#show_name_4').children().children().text($('#name_4').val());
+	
+});
+	
+var bag_old=-1;
+var content;
+		
+		$('.bag').on('touchstart', function(){
+		if(bag_old!=-1)
+		{
+			bag_old.removeClass('ui-btn-active');
+		}
+		$(this).addClass('ui-btn-active');
+   		content= $(this).children().children();
+   	
+   		 chiso=$(this).attr("id");
+	bag_old=$(this);
+});
+
+$('.num').on('touchstart',function(){
+	
+	var num= $(this).children().children().text();
+	var giatri= Number(content.text())+Number(num);
+	
+	content.text(giatri);
+	if(chiso!=-1)
+	{
+		score[chiso]+=Number(num);
+	}
+	
+	console.log(score);
+	});
+</script>
+  	 </body>
+  </html>
